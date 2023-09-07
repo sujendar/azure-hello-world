@@ -23,8 +23,8 @@ public class HelloWorldController {
 	  private  KeyVaultClient keyVaultClient;
     @GetMapping("/hello")
 	public String get() {
-    	 KeyVaultSecret keyVaultSecret = keyVaultClient.getSecret("DemoSecret");
-		return "HelloWorld ";
+    	// KeyVaultSecret keyVaultSecret = keyVaultClient.getSecret("DemoSecret");
+		return "HelloWorld " +System.getenv("DemoSecret");
 		
 	}
 }
