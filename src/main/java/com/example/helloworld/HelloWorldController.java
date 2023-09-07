@@ -11,8 +11,8 @@ import com.azure.security.keyvault.secrets.models.KeyVaultSecret;
 @RestController
 public class HelloWorldController {
 	
-	  @Value("${topicEndpoint}") 
-	  public String topicEndpoint;
+	  @Value("${demosecret}") 
+	  public String demosecret;
 	  
 	  @Value("${topicKey}")
 	  public String topicKey;
@@ -23,7 +23,7 @@ public class HelloWorldController {
     @GetMapping("/hello")
 	public String get() {
     	 KeyVaultSecret keyVaultSecret = keyVaultClient.getSecret("DemoSecret");
-		return "HelloWorld "+keyVaultSecret;
+		return "HelloWorld "+demosecret;
 		
 	}
 }
