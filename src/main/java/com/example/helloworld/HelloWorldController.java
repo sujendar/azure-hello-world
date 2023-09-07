@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.azure.security.keyvault.secrets.models.KeyVaultSecret;
-
 @RestController
 public class HelloWorldController {
 	
@@ -19,13 +17,13 @@ public class HelloWorldController {
 	  @Value("${topicKey}")
 	  public String topicKey;
 	 
-	  @Autowired
-	  @Qualifier(value = "KeyVaultAutoconfiguredClient")
-	  private  KeyVaultClient keyVaultClient;
+	  @Value("${demoMgm}") 
+	  public String mgmsecret;
+	 
     @GetMapping("/hello")
 	public String get() {
     	// KeyVaultSecret keyVaultSecret = keyVaultClient.getSecret("DemoSecret");
-		return "HelloWorld " +demosecret;
+		return "HelloWorld " +demosecret +mgmsecret;
 		
 	}
 }
