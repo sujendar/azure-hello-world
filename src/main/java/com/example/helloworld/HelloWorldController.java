@@ -16,10 +16,10 @@ public class HelloWorldController {
 	  
 	  @Value("${topicKey}")
 	  public String topicKey;
+	 
 	  @Autowired
 	  @Qualifier(value = "KeyVaultAutoconfiguredClient")
 	  private  KeyVaultClient keyVaultClient;
-	 
     @GetMapping("/hello")
 	public String get() {
     	 KeyVaultSecret keyVaultSecret = keyVaultClient.getSecret("DemoSecret");
