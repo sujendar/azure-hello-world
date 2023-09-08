@@ -2,7 +2,7 @@ package com.example.helloworld;
 
 import org.springframework.stereotype.Component;
 
-@Component("KeyVaultAutoconfiguredClient")
+//@Component("KeyVaultAutoconfiguredClient")
 public class KeyVaultAutoconfiguredClient /* implements KeyVaultClient */ {
 	/*
 	 * private final SecretClient secretClient;
